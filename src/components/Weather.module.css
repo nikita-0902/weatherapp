@@ -15,30 +15,76 @@ img {
 }
 
 button {
-    background: #eee;
-    color: #0709eb;
     text-decoration: none;
-    display: block;
-    width: 90px;
-    text-align: center;
-    margin: 20px auto;
-    padding: 10px 10px;
-    transition: all 0.3s;
+    display: flex;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 20px 30px;
+    margin-top: 10px;
+    position: relative;
+    color: black;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: none;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+button:before, button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+button:before {
+    bottom: 0;
+    left: 0;
+    border-left: 2px solid rgb(81, 227, 213);
+    border-top: 2px solid rgb(81, 227, 213);
+    transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+
+button:after {
+    top: 0;
+    right: 0;
+    border-right: 2px solid rgb(81, 227, 213);
+    border-bottom: 2px solid rgb(81, 227, 213);
+    transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+}
+
+button:hover:before, button:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+button:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+
+button:hover:after {
+    transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
 }
 
 button:hover {
-    box-shadow: 0px -5px 0 #0709eb inset;
+    color: #fff;
+    background: blueviolet;
 }
 
 input[type=text] {
-    border-radius: 4px;
-    width: 80px;
+    margin: auto;
+    display: flex;
+    width: 180px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
-    width: 10%;
+    border: 2px solid #555;
 }
 
 .weather__data {
@@ -56,15 +102,7 @@ input[type=text]:focus {
     background-image: url(../images/winter.jpg);
 }
 
-.spring {
-    border-radius: 20px;
-    border: 1px solid gainsboro;
-    width: 240px;
-    margin: auto;
-    background-image: url(../images/spring.jpg);
-}
-
-.summer { 
+.summer {
     border-radius: 20px;
     border: 1px solid gainsboro;
     width: 240px;
@@ -73,11 +111,96 @@ input[type=text]:focus {
     background-image: url(../images/summer.jpg);
 }
 
+h1 {
+    margin-bottom: 20px;
+}
 
+h1::first-letter {
+    color: rgb(81, 227, 213);
+}
 
+@media (max-width:560px) {
+    .search__data>h1 {
+        font-size: 30px;
+    }
+    input[type=text] {
+        margin: auto;
+        display: flex;
+        width: 100px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    button {
+        text-decoration: none;
+        display: flex;
+        margin: auto;
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        margin-top: 10px;
+        position: relative;
+        color: black;
+        border: 1px solid rgba(255, 255, 255, .4);
+        background: none;
+        font-weight: 150;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .winter {
+        border-radius: 20px;
+        border: 1px solid gainsboro;
+        width: 200px;
+        margin: auto;
+        background-image: url(../images/winter.jpg);
+    }
+    .summer {
+        border-radius: 20px;
+        border: 1px solid gainsboro;
+        width: 200px;
+        margin: auto;
+        background-image: url(../images/summer.jpg);
+    }
+}
 
-.search_app {
-    font-size: 40px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    mix-blend-mode: overlay;
+@media (max-width:270px) {
+    .search__data>h1 {
+        font-size: 25px;
+    }
+    input[type=text] {
+        margin: auto;
+        display: flex;
+        width: 90px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    button {
+        text-decoration: none;
+        display: flex;
+        margin: auto;
+        margin-bottom: 15px;
+        padding: 7px 10px;
+        margin-top: 10px;
+        position: relative;
+        color: black;
+        border: 1px solid rgba(255, 255, 255, .4);
+        background: none;
+        font-weight: 150;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .winter {
+        border-radius: 20px;
+        border: 1px solid gainsboro;
+        width: 170px;
+        margin: auto;
+        background-image: url(../images/winter.jpg);
+    }
+    .summer {
+        border-radius: 20px;
+        border: 1px solid gainsboro;
+        width: 170px;
+        margin: auto;
+        background-image: url(../images/summer.jpg);
+    }
 }

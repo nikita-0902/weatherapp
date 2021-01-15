@@ -6,7 +6,9 @@ import ws from './Weather.module.css';
 function WeatherSearch(props) {
     return (
         <div className={ws.search__data}>
-            <p className={ws.search_app}>WeatherApp</p>
+
+            <h1>WeatherApp</h1>
+
             <form onSubmit={props.api_call}>
                 <input type="text" name="location" required />
                 <button >Search</button>
